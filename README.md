@@ -60,6 +60,8 @@ sudo systemctl enable mysql
 
 sudo mysql -u root -p
 
+Verify connection :- mysql -u root -pTest@123 -h 127.0.0.1 -P 3306
+
 # 8. Create DataBase & User for App
 CREATE DATABASE bankdb;
 
