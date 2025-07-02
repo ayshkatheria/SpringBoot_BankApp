@@ -1,1 +1,3 @@
-First Lets Create Docker file and start a Project.
+Lets First Create .jar without using docker.
+- 
+
