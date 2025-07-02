@@ -2,9 +2,11 @@
 - 
 # 1. Install Java open jdk17
 sudo apt-get update
+
 sudo apt-get install -y openjdk-17-jdk
 
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
 export PATH=$JAVA_HOME/bin:$PATH
 
 Verify java version (it should be 17.0.x)
@@ -13,7 +15,9 @@ javac -version
 
 # 2. Install Maven 3.8.3
    wget https://archive.apache.org/dist/maven/maven-3/3.8.3/binaries/apache-maven-3.8.3-bin.tar.gz
+   
    tar -xvzf apache-maven-3.8.3-bin.tar.gz
+   
    sudo mv apache-maven-3.8.3 /opt/maven
 
 Set up environment variables
