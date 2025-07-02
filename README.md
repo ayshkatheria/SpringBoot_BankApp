@@ -45,4 +45,43 @@ java -jar target/bankapp-0.0.1-SNAPSHOT.jar
 open the prot in inbound rules SG
 http://localhost:8080
 
+# 6. Configure Mysql DB 
+sudo apt-get update
 
+sudo apt-get install -y mysql-server
+
+Start the service:
+
+sudo systemctl start mysql
+
+sudo systemctl enable mysql
+
+# 7. Login into MySql Db
+
+sudo mysql -u root -p
+
+# 8. Create DataBase & User for App
+CREATE DATABASE bankdb;
+
+-- Create user (replace 'mypassword' with a strong password)
+CREATE USER 'bankuser'@'localhost' IDENTIFIED BY 'mypassword';
+
+-- Grant permissions
+GRANT ALL PRIVILEGES ON bankdb.* TO 'bankuser'@'localhost';
+
+-- Apply changes
+FLUSH PRIVILEGES;
+EXIT;
+
+# 9. Update Springboot configuration
+
+edit file : src/main/resources/application.properties
+
+spring.datasource.username=bankuser
+
+spring.datasource.password=mypassword
+
+# 10. Recreate jar
+mvn clean install
+
+java -jar target/bankapp-0.0.1-SNAPSHOT.jar
