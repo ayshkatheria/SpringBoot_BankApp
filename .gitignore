@@ -1,0 +1,8 @@
+*.pub
+bankapp-automation-key
+*.hcl
+*.backup
+*.tfstate
+.terraform/
+.terraform/
+terraform-provider-aws_v6.2.0_x5
